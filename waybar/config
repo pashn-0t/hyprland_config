@@ -1,34 +1,31 @@
 {
-  "margin-top" : 5,
+  "position": "top",
+    "margin-top" : 2,
     "margin-left": 10,
     "margin-right": 10,
-    "height" : 30,
+    "height" : 28,
     "modules-left": [
-      "hyprland/window"
-      ],
-    "modules-center": [
       "hyprland/workspaces",
       "custom/power"
+     ],
+    "modules-center": [
+      "hyprland/window"
     ],
     "modules-right": [
+    "hyprland/language",
     "pulseaudio",
+    "cpu",
+    "battery",
+    "memory",
     "network",
     "temperature",
-    "battery",
     "clock",
-    "keyboard-state"
     ],
-    "custom/power": {
-    "format": "⏻",
-    "tooltip": false,
-    "on-click": "wlogout",
-    "on-click-right": "systemctl poweroff",
-},
     "hyprland/window": {
       "format": "{}",
       "max-length": 35,
       "rewrite": {
-        "": "Harsh"
+        "": "Hyprland"
       },
       "separate-outputs": true,
     },
@@ -49,11 +46,11 @@
       "format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {
-      "format": "  {usage}%",
+      "format": " {usage}%",
       "tooltip": false
     },
     "memory": {
-      "format": "{}%  "
+      "format": "{}% "
     },
     "temperature": {
       "critical-threshold": 80,
@@ -83,8 +80,8 @@
     "pulseaudio": {
       "format": "{icon}  {volume}%",
       "format-bluetooth": "{volume}% {icon} {format_source}",
-      "format-bluetooth-muted": " {icon} {format_source}",
-      "format-muted": "",
+      "format-bluetooth-muted": " {icon} {format_source}",
+      "format-muted": " {format_source}",
       "format-icons": {
         "headphone": "",
         "hands-free": "",
@@ -94,13 +91,13 @@
         "car": "",
         "default": ["", "", ""]
       },
-      "on-click": "blueman-tray"
+      "on-click": "pavucontrol"
     },
-	  "keyboard-state": {
-    "numlock": false,
-    "capslock": false,
-    "format": "{name} {lang}",
-    "format-icons": ["EN", "RU"],
-    "langs": ["us", "ru"]
-  }
+
+	"custom/power": {
+        "format": "⏻",  // Иконка (можно использовать 🔌, ⏻, ⏼, ⭘, 🚪 и т. д.)
+        "tooltip": false,
+        "on-click": "wlogout",  // Запуск wlogout при клике
+        "on-click-right": "systemctl suspend",  // Опционально: действие при правом клике
+    }
 }

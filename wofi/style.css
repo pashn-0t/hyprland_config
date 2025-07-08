@@ -1,46 +1,89 @@
-window {
-  background-color: #1a1b26;
-}
 
-* {
-  font-family: "Jetbrains Mono";
-  color: #fff;
-}
+ * {
+    font-family: 'JetBrains Mono Nerd Font', monospace;
+    font-size: 14px;
+ }
 
-#scroll {
-  padding: 0.5rem;
-}
+ /* Window */
+ window {
+    margin: 0px;
+    padding: 10px;
+    border: 0px solid #8aadf4;
+    border-radius: 0px;
+    background-color: #24273a;
+    animation: slideIn 0.5s ease-in-out both;
+ }
 
-#input {
-  background-color: #1a1b26;
-  color: #c0caf5;
-  outline: none;
-  box-shadow: none;
-  border: 0;
-  border-radius: 0;
-  font-size: 1rem;
-  padding: 0.5rem;
-}
+ /* Slide In */
+ @keyframes slideIn {
+    0% {
+       opacity: 0;
+    }
 
-#inner-box {
-  margin: 0.5rem;
-  font-size: 1rem;
-}
+    100% {
+       opacity: 1;
+    }
+ }
 
-#img {
-  margin: 10px 10px;
-}
+ /* Inner Box */
+ #inner-box {
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    background-color: #24273a;
+    animation: fadeIn 0.5s ease-in-out both;
+ }
 
-#entry {
-  border-radius: 0.5rem;
-}
+ /* Fade In */
+ @keyframes fadeIn {
+    0% {
+       opacity: 0;
+    }
 
-#entry:selected {
-  background-color: #c0caf5;
-  outline: none;
-}
+    100% {
+       opacity: 1;
+    }
+ }
 
-#text:selected {
-  color: #1a1b26;
-}
+ /* Outer Box */
+ #outer-box {
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    background-color: #24273a;
+ }
 
+ /* Scroll */
+ #scroll {
+    margin: 0px;
+    padding: 10px;
+    border: none;
+ }
+
+ /* Input */
+ #input {
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    color: #8aadf4;
+    background-color: #494d64;
+    animation: fadeIn 0.5s ease-in-out both;
+ }
+
+ /* Text */
+ #text {
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    color: #cad3f5;
+    animation: fadeIn 0.5s ease-in-out both;
+ }
+
+ /* Selected Entry */
+ #entry:selected {
+   background-color: #8aadf4;
+ }
+
+ #entry:selected #text {
+    color: #24273a;
+ }

@@ -1,15 +1,15 @@
 @import "macchiato.css";
 
 * {
-  font-family: "JetBrainsMono Nerd Font", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-family: "JetBrains Mono", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 18px;
 }
 
 window#waybar {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: @base;
   border-radius: 13px;
   transition-property: background-color;
-  transition-duration: .5s;
+  transition-duration: 0.5s;
 }
 
 button {
@@ -34,16 +34,16 @@ button:hover {
 #workspaces button {
   padding: 0 5px;
   background-color: transparent;
-  color: #ffffff;
+  color: @rosewater;
 }
-
 
 #workspaces button:hover {
   background: rgba(0, 0, 0, 0.2);
 }
 
 #workspaces button.focused {
-  background-color: @lavender;
+  background-color: @rosewater;
+  color: @base;
   box-shadow: inset 0 -3px #ffffff;
 }
 
@@ -52,7 +52,7 @@ button:hover {
 }
 
 #mode {
-  background-color: #64727D;
+  background-color: #64727d;
   box-shadow: inset 0 -3px #ffffff;
 }
 
@@ -86,8 +86,16 @@ button:hover {
   color: @flamingo;
 }
 
+#cpu {
+  color: @peach;
+}
+
+#memory {
+  color: @green;
+}
+
 #window {
-  color: @rosewater;
+  color: @text;
 }
 
 .modules-right,
@@ -96,7 +104,6 @@ button:hover {
   background-color: @base;
   border-radius: 15px;
 }
-
 .modules-right {
   padding: 0 10px;
 }
@@ -108,7 +115,6 @@ button:hover {
 .modules-center {
   padding: 0 10px;
 }
-
 #battery.charging,
 #battery.plugged {
   color: @sapphire;
@@ -137,4 +143,16 @@ label:focus {
 
 #pulseaudio.muted {
   color: @text;
+}
+
+#custom-power {
+    font-size: 18px;
+    color: #f38ba8;  /* Цвет иконки */
+    margin-right: 10px;
+    padding: 0 5px;
+}
+
+#custom-power:hover {
+    color: #fab387;
+    background-color: rgba(30, 30, 46, 0.5);
 }
